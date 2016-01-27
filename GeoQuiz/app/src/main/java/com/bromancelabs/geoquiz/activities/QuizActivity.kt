@@ -7,8 +7,6 @@ import android.util.Log
 import com.bromancelabs.geoquiz.R
 import com.bromancelabs.geoquiz.models.Question
 import com.bromancelabs.geoquiz.utils.SnackBarUtils
-import com.bromancelabs.geoquiz.utils.onClick
-
 import kotlinx.android.synthetic.main.activity_quiz.*
 
 class QuizActivity() : AppCompatActivity() {
@@ -38,10 +36,10 @@ class QuizActivity() : AppCompatActivity() {
 
         updateQuestion()
 
-        btn_cheat.onClick { cheatButtonClicked() }
-        btn_next.onClick { nextButtonClicked() }
-        btn_true.onClick { trueButtonClicked() }
-        btn_false.onClick { falseButtonClicked() }
+        btn_cheat.setOnClickListener { cheatButtonClicked() }
+        btn_next.setOnClickListener { nextButtonClicked() }
+        btn_true.setOnClickListener { trueButtonClicked() }
+        btn_false.setOnClickListener { falseButtonClicked() }
     }
 
     override fun onStart() {

@@ -3,11 +3,9 @@ package com.bromancelabs.geoquiz.activities;
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import com.bromancelabs.geoquiz.R
-import com.bromancelabs.geoquiz.utils.onClick
 import kotlinx.android.synthetic.main.activity_cheat.*
 
 class CheatActivity : AppCompatActivity() {
@@ -34,7 +32,7 @@ class CheatActivity : AppCompatActivity() {
 
         answerIsTrue = getIntent().getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false)
 
-        btn_showAnswer.onClick { showAnswerClicked(tv_answer) }
+        btn_showAnswer.setOnClickListener { showAnswerClicked(tv_answer) }
     }
 
     fun showAnswerClicked(view: TextView) {
