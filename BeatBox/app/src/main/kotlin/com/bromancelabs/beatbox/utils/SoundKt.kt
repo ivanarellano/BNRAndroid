@@ -1,7 +1,12 @@
 package com.bromancelabs.beatbox.utils
 
-/**
- * Created by Ivan on 2/16/2016.
- */
-class SoundKt {
+data class SoundKt(val assetPath: String) {
+    val name: String
+    var id: Int? = null
+
+    init {
+        val components = assetPath.split("/")
+        val filename = components[components.size - 1]
+        name = filename.replace(".wav", "")
+    }
 }
